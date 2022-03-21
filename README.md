@@ -18,6 +18,6 @@ Adds a new menu item, "Explore Location in OS", to the context menu (aka right-c
 
 ## Heritage
 
-The plugin is somewhat similar to some previous plugins, now no longer maintained plugins by various authors, but most notably the Explore-from-here plugin.
+The plugin is somewhat similar to some previous plugins by various authors, now no longer maintained, most notably the Explore-from-here plugin.
 
 However, the plugin presented here is a lot simpler than its predecessors and therefore easier to maintain.

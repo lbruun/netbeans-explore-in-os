@@ -61,17 +61,12 @@ public final class ExploreInOsAction extends CookieAction {
         FileObject fileObject = getFileObject(nodes);
         if (fileObject != null) {
             File file = FileUtil.toFile(fileObject);
-            if (!file.isDirectory()) {
-                file = file.getParentFile();
-            }
             if (file != null) {
-                Desktop desktop = Desktop.getDesktop();
-                try {
-                    desktop.open(file);
-                } catch (Exception ex) {
-                    logger.log(Level.WARNING, "Could not open " + file, ex);
+                final File dir = (!file.isDirectory()) ? file.getParentFile() : file;
+                if (dir != null) {
+                    browseFolderLocation(dir);
                 }
-            } 
+            }
         }
     }
 
@@ -86,7 +81,6 @@ public final class ExploreInOsAction extends CookieAction {
         }
         return false;
     }
-
  
     @Override
     public String getName() {
@@ -123,7 +117,6 @@ public final class ExploreInOsAction extends CookieAction {
                     }
                 }
             }
-
         }
         return null;
     }
@@ -137,5 +130,19 @@ public final class ExploreInOsAction extends CookieAction {
             return (urlProtocol.equals("file"));
         }
         return false;
+    }
+
+    private void browseFolderLocation(File dir) {
+        // From JDK 9 onwards there is now a dedicated method for this in the 
+        // Desktop class: browseFileDirectory(). However, it does not work, nor 
+        // is it intended to work. See https://bugs.openjdk.java.net/browse/JDK-8233994
+        // for more information. Instead the open() method actually seems to
+        // work on all platforms.
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.open(dir);
+        } catch (Exception ex) {
+            logger.log(Level.WARNING, "Could not open " + dir, ex);
+        }
     }
 }

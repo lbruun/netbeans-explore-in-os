@@ -15,6 +15,10 @@ Adds a new menu item, "Explore Location in OS", to the context menu (aka right-c
 ![Screenshot 2022-03-21 215312](https://user-images.githubusercontent.com/32431476/159367361-d085f45f-8788-41f8-868e-5b0269974518.png)
 ![Screenshot 2022-03-21 215339](https://user-images.githubusercontent.com/32431476/159367370-67180fd3-251e-485b-bbe1-ed57980b0d89.png)
 
+## How it works
+
+The action simply uses [Desktop.open()](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Desktop.html#open(java.io.File)) 
+and should therefore work equally well on any platform supported by AWT/Swing.
 
 ## Heritage
 

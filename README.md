@@ -22,6 +22,11 @@ Right-click on a Project:
 
 ![Screenshot 2022-03-21 215339](https://user-images.githubusercontent.com/32431476/159367370-67180fd3-251e-485b-bbe1-ed57980b0d89.png)
 
+## Installation
+The plugin is available from the Official NetBeans Plugin update center under the name of "Explore Location in OS".
+
+From within the NetBeans IDE: Go to _Tools --> Plugins --> Available Plugins_ and you will find the plugin in the list.
+
 
 ## How it works
 

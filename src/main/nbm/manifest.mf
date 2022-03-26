@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 OpenIDE-Module-Name: Explore Location in OS
+OpenIDE-Module-Display-Category: Utilities
 OpenIDE-Module-Localizing-Bundle: net/lbruun/nb/exploreinos/Bundle.properties
 OpenIDE-Module-Long-Description: Adds an "Explore location in OS" menu item to the context
   menu in the Projects Explorer and Files Explorer. When clicked it opens the

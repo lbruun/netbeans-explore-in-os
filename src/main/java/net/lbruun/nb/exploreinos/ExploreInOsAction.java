@@ -34,7 +34,11 @@ import org.openide.util.actions.CookieAction;
         asynchronous = true
 )
 @ActionReferences({
+    // Install on any folder originating from a Loader.
+    // This will affect both Projects and Files explorer views.
     @ActionReference(path = "Loaders/folder/any/Actions", position = 1600),
+
+    // Install on Project nodes
     @ActionReference(path = "Projects/Actions")}
 )
 @Messages("CTL_ExploreInOsAction=Explore Location in OS")
@@ -74,6 +78,8 @@ public final class ExploreInOsAction extends CookieAction {
     
     @Override
     protected boolean enable(Node[] nodes) {
+        // This method gets called when a node is right-clicked.
+        // It better execute fast! (if not, user will experience lag in the UI)
         if (super.enable(nodes) && isJDKDesktopAPISupported) {
             FileObject fileObject = getFileObject(nodes);
             if (fileObject != null) {

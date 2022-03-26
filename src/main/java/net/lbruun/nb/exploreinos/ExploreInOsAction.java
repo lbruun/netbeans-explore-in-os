@@ -42,6 +42,10 @@ public final class ExploreInOsAction extends CookieAction {
 
     private final boolean isJDKDesktopAPISupported = Desktop.isDesktopSupported();
     private static final Logger logger = Logger.getLogger(ExploreInOsAction.class.getName());
+    private static final Class[] COOKIE_CLASSES = new Class[]{
+        DataObject.class,
+        FileObject.class
+    };
 
 
     @Override
@@ -49,10 +53,7 @@ public final class ExploreInOsAction extends CookieAction {
         // If the Node does not have any of these in its lookup
         // then for sure the Node does not represent something which is
         // an object in the host's local file system.
-        return new Class[] {
-            DataObject.class,
-            FileObject.class,
-        };
+        return COOKIE_CLASSES;
     }
 
     

@@ -93,6 +93,7 @@ limitations under the License.
                     <licenseFile>LICENSE</licenseFile>
                     <licenseName>Apache-2.0</licenseName>
                     <author>Lars Bruun-Hansen (lbruun.net)</author>
+                    <requiresRestart>true</requiresRestart>
                 </configuration>
             </plugin>
             <plugin>
